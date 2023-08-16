@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+}
+.header{
+    background-color: #172573;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+.nav{
+    display: flex;
+    height: 100%;
+}
+.header ul{
+    display: flex;
+    height: 100%;
+}
+.header ul li{
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+.header ul li a{
+    padding: 0 20px;
+    height: 100%;
+    color: #fff;
+    align-items: center;
+}
