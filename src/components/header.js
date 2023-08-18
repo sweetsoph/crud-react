@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import {Link as LinkStyled, ActiveLink} from "../styles.js";
-import "./header.css";
+import {Link as LinkStyled, ActiveLink} from "./styles.js";
+import "./header.module.css";
 
 function Header() {
   const location = useLocation();

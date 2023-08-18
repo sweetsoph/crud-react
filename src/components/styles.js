@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-
+export const Container = styled.div`
+    width: 100%;
+    height: 75vh;
+`;
 export const Link = styled.p`
     color: #fff;
     text-decoration: none;
