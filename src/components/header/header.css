@@ -1,28 +1,24 @@
 *{
     margin: 0;
 }
-.header{
-    background-color: #172573;
+header{
     display: flex;
+    background-color: #171559;
     justify-content: space-between;
     height: 70px;
 }
-.nav{
-    display: flex;
-    height: 100%;
-}
-.header ul{
-    display: flex;
-    height: 100%;
-}
-.header ul li{
+ul{
     display: flex;
     list-style: none;
     height: 100%;
 }
-.header ul li a{
-    padding: 0 20px;
+li{
+    display: flex;
     height: 100%;
-    color: #fff;
+}
+a{
+    display: flex;
+    height: 100%;
     align-items: center;
+    padding: 0 20px;
 }
