@@ -1,0 +1,16 @@
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em 0;
+    width: 100%;
+}
+.formGroup label{
+    margin-bottom: 0.5em;
+}
+.formGroup select{
+    padding: 1em;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 0.9em;
+}

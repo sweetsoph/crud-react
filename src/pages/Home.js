@@ -1,7 +1,11 @@
+import PrimaryButton from "../components/layout/PrimaryButton";
+
 function Home() {
     return (
-        <div className="main">
-            <h1>Home</h1>
+        <div>
+            <h1>Bem vindo ao <span>Costs</span></h1>
+            <p>Gerencie suas despesas de forma simples e rápida.</p>
+            <PrimaryButton to="/newproject" text="Criar Projeto" />
         </div>
     );
 }

@@ -4,7 +4,15 @@
   font-family: 'Montserrat', sans-serif;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
+  border: none;
 }
 body{
   background: #f5f5f5;
+}
+h1{
+  color: #F29F80;
+}
+h3{
+  font-weight: 600;
 }
