@@ -5,14 +5,15 @@ import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 
 function ProjectCard({project}){
+    const path = `/projects/${project.id}`;
     return(
         <div className={styles.card}>
             <h2>{project.name}</h2>
             <h3>{project.category.name}</h3>
-            <p>R${project.budget},00</p>
+            <p>Orçamento: R${project.budget},00</p>
             <div className={styles.groupButtons}>
-                <SecondaryButton text="Editar" icon={<MdEdit/>}/>
-                <PrimaryButton text="Excluir" icon={<MdDeleteOutline/>}/>
+                <SecondaryButton to={path} text="Editar" icon={<MdEdit/>}/>
+                <PrimaryButton to={path} text="Excluir" icon={<MdDeleteOutline/>}/>
             </div>
         </div>
     )

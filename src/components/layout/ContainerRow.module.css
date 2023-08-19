@@ -1,7 +1,13 @@
 .container{
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+    width: 100%;
+}
+.between{
+    justify-content: space-between;
+}
+.start{
+    justify-content: flex-start;
 }

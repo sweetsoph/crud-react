@@ -6,10 +6,14 @@ import Message from "../components/layout/Message";
 function NewProject() {
   //useNavigate is a hook that allows us to redirect the user
   const history = useNavigate();
-
   //this function will be passed to the ProjectForm component as a prop, allowing the component to know if it is supposed to create or edit, as soon as the component is also used to edit a projectF
   function createProject(project) {
-    if (!project.name || !project.description || !project.category) {
+    console.log(project);
+    if (
+      !project.name &&
+      !project.budget &&
+      !project.category
+    ) {
       history("/projects/newproject", {
         state: { message: "Erro. Preencha todos os campos." },
       });

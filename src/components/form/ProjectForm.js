@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Input from "../layout/Input";
-import Select from "../layout/Select";
-import SubmitButton from "../layout/SubmitButton";
+import Input from "./Input";
+import Select from "./Select";
+import SubmitButton from "./SubmitButton";
 
 import styles from "./ProjectForm.module.css";
 import Message from "../layout/Message";

@@ -1,8 +1,8 @@
 import styles from "./Container.module.css"
 
-function Container({children}) {
+function Container({children, align}) {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles[align]}`}>
             {children}
         </div>
     )
