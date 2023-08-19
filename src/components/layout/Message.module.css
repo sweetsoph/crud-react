@@ -1,0 +1,20 @@
+.message{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #00000020;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.success{
+    background-color: #2dc72d70;
+    color: #50a150;
+}
+
+.error{
+    background-color: #bd0000;
+    color: #ffffff;
+}

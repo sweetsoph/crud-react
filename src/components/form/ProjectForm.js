@@ -5,6 +5,7 @@ import Select from "../layout/Select";
 import SubmitButton from "../layout/SubmitButton";
 
 import styles from "./ProjectForm.module.css";
+import Message from "../layout/Message";
 
 function ProjectForm({ handleSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([]);
@@ -20,7 +21,9 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
     })
       .then((response) => response.json())
       .then((data) => setCategories(data))
-      .catch((err) => console.log(err));
+      .catch(() => (
+        <Message type="error" text="Não foi possível carregar as categorias" />
+      ));
   }, []);
 
   //function that will be called when the form is submitted, it can either create or edit a project, it depends if the father component is using the component to create or edit a project
