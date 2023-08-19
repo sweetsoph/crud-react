@@ -37,6 +37,23 @@ function Projects() {
   if (location.state) {
     message = location.state.message;
   }
+  
+  function deleteProject(id) {
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then(data => {
+        setProjects(projects.filter(project => project.id !== id));
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <Container>
@@ -52,7 +69,7 @@ function Projects() {
       {removeLoading ? (
         <ContainerRow>
           {projects.map((project) => (
-            <ProjectCard project={project} key={project.id} />
+            <ProjectCard project={project} key={project.id} handleRemove={deleteProject} />
           ))}
         </ContainerRow>
       ) : (
