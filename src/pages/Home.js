@@ -5,7 +5,7 @@ function Home() {
         <div>
             <h1>Bem vindo ao <span>Costs</span></h1>
             <p>Gerencie suas despesas de forma simples e rápida.</p>
-            <PrimaryButton to="/newproject" text="Criar Projeto" />
+            <PrimaryButton to="/projects/newproject" text="Criar Projeto" />
         </div>
     );
 }

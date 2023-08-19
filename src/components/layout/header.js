@@ -17,7 +17,7 @@ function Header() {
           )}
         </li>
         <li>
-          {location.pathname == "/projects" ? (
+          {location.pathname.includes("/projects") ? (
             <ActiveLink to="/projects">Projetos</ActiveLink>
           ) : (
             <StyledLink to="/projects">Projetos</StyledLink>
