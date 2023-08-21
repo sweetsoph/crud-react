@@ -15,6 +15,7 @@ function Project() {
   const { id } = useParams();
   const [project, setProject] = useState({});
   const [message, setMessage] = useState("");
+  const [typeMessage, setTypeMessage] = useState("");
   const [showProjectForm, setShowProjectForm] = useState(false);
 
   useEffect(() => {
@@ -36,20 +37,26 @@ function Project() {
   }
 
   function editProject(project) {
-    fetch(`http://localhost:5000/projects/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(project),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setProject(data);
-        setMessage("Projeto editado com sucesso!");
+    if (project.budget < project.cost) {
+      setTypeMessage("error");
+      setMessage("O orçamento não pode ser menor que o custo!");
+    } else {
+      fetch(`http://localhost:5000/projects/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(project),
       })
-      .catch((err) => console.log(err));
-    toggleProjectForm();
+        .then((res) => res.json())
+        .then((data) => {
+          setProject(data);
+          setTypeMessage("success");
+          setMessage("Projeto editado com sucesso!");
+        })
+        .catch((err) => console.log(err));
+      toggleProjectForm();
+    }
   }
   return (
     <Container>
@@ -63,7 +70,7 @@ function Project() {
               icon={showProjectForm ? <MdCancel /> : <MdEdit />}
             />
           </ContainerRow>
-          {message && <Message type="success" text={message}/>}
+          {message && <Message type={typeMessage} text={message} />}
           {showProjectForm ? (
             <ProjectForm
               handleSubmit={editProject}
