@@ -5,6 +5,7 @@ import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import Header from "./components/layout/header";
 import NewProject from "./pages/NewProject";
+import Project from "./pages/Project";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects/:id" element={<Project />} />
       </Routes>
     </Router>
   );

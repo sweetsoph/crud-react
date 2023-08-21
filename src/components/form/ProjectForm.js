@@ -10,7 +10,7 @@ import Message from "../layout/Message";
 function ProjectForm({ handleSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([]);
   //projects is either an empty object or the projectData object, it depends if the component is being used to create or edit a project
-  const [project, setProject] = useState(projectData || {});
+  const [project, setProject] = useState(projectData || []);
 
   useEffect(() => {
     fetch("http://localhost:5000/categories", {
@@ -46,7 +46,6 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
         name: e.target.options[e.target.selectedIndex].text
     }});
   }
-
   return (
     <form onSubmit={submit} className={styles.form}>
       <Input

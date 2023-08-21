@@ -13,6 +13,7 @@ import Loading from "../components/layout/Loading";
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false);
+  const [projectMessage, setProjectMessage] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/projects", {
@@ -37,7 +38,7 @@ function Projects() {
   if (location.state) {
     message = location.state.message;
   }
-  
+
   function deleteProject(id) {
     fetch(`http://localhost:5000/projects/${id}`, {
       method: "DELETE",
@@ -46,9 +47,9 @@ function Projects() {
       },
     })
       .then((resp) => resp.json())
-      .then(data => {
-        setProjects(projects.filter(project => project.id !== id));
-
+      .then(() => {
+        setProjects(projects.filter((project) => project.id !== id));
+        setProjectMessage("Projeto excluído com sucesso!");
       })
       .catch((err) => {
         console.log(err);
@@ -66,10 +67,15 @@ function Projects() {
         />
       </ContainerRow>
       {message && <Message type="success" text={message} />}
+      {projectMessage && <Message type="success" text={projectMessage} />}
       {removeLoading ? (
-        <ContainerRow>
+        <ContainerRow align="start">
           {projects.map((project) => (
-            <ProjectCard project={project} key={project.id} handleRemove={deleteProject} />
+            <ProjectCard
+              project={project}
+              key={project.id}
+              handleRemove={deleteProject}
+            />
           ))}
         </ContainerRow>
       ) : (

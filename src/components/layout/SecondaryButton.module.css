@@ -1,9 +1,11 @@
 .button{
     display: flex;
+    align-items: center;
     gap: 5px;
     background-color: #fff;
     color: #F29F80;
     padding: 9px 19px;
     width: fit-content;
     border: 1px solid #F29F80;
+    font-size: 18px;
 }

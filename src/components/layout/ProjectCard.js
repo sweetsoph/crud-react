@@ -6,10 +6,11 @@ import SecondaryButton from "./SecondaryButton";
 function ProjectCard({ project, handleRemove }) {
   const path = `/projects/${project.id}`;
   const idProjeto = project.id;
+
   const handleDelete = (e) => {
     e.preventDefault();
     console.log("Clicou");
-    handleRemove(idProjeto)
+    handleRemove(idProjeto);
   };
 
   return (
