@@ -1,9 +1,8 @@
-import styles from "./ActiveLink.module.css";
 import { Link } from "react-router-dom";
 
 function ActiveLink({ to, children }) {
   return (
-    <Link to={to} className={styles.linkStyle}>
+    <Link to={to} style={{color: "#F29F80", textDecoration: "none", fontStyle: "none"}}>
       {children}
     </Link>
   );
